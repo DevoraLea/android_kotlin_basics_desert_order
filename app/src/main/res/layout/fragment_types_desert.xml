@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".TypesDeseetFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.desertorder.model.OrderViewModel" />
+        <variable
+            name="typesDesert"
+            type="com.example.desertorder.TypesDeseetFragment" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#733D04">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <RadioButton
+                android:id="@+id/chocolate_cake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chocolate_cake"
+                android:checked="@{viewModel.typeDesert.equals(@string/chocolate_cake)}"
+                android:onClick="@{()-> viewModel.setTypeDesert(@string/chocolate_cake)}"/>
+            <RadioButton
+                android:id="@+id/oznei_tmarim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/oznei_tmarim"
+                android:checked="@{viewModel.typeDesert.equals(@string/oznei_tmarim)}"
+                android:onClick="@{()-> viewModel.setTypeDesert(@string/oznei_tmarim)}"/>
+            <RadioButton
+                android:id="@+id/chocolate_cookie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chocolate_cookie"
+                android:checked="@{viewModel.typeDesert.equals(@string/chocolate_cookie)}"
+                android:onClick="@{()-> viewModel.setTypeDesert(@string/chocolate_cookie)}"/>
+            <RadioButton
+                android:id="@+id/brigadeiro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/brigadeiro"
+                android:checked="@{viewModel.typeDesert.equals(@string/brigadeiro)}"
+                android:onClick="@{()-> viewModel.setTypeDesert(@string/brigadeiro)}"/>
+        </RadioGroup>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/purple_700"/>
+        <TextView
+            android:id="@+id/subtotal"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@{@string/subtotal_price(viewModel.price)}"
+            app:layout_constraintTop_toBottomOf="@id/divider"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/cancel"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="cancel"
+                android:onClick="@{()-> typesDesert.back()}"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/next"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Next"
+                android:onClick="@{()->typesDesert.nextPage()}"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+</layout>

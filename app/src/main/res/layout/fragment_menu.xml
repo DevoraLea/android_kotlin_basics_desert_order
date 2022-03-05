@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="menu"
+            type="com.example.desertorder.MenuFragment" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#733D04">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="OrderDesert"
+        android:textSize="26sp"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            app:srcCompat="@drawable/cupcake" />
+
+        <Button
+            android:id="@+id/one_cupcake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="one cupcake"
+            android:onClick="@{()->menu.amountCupcakes(1)}"/>
+
+        <Button
+            android:id="@+id/two_cupcake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="two cupcake"
+            android:onClick="@{()->menu.amountCupcakes(2)}"/>
+
+        <Button
+            android:id="@+id/three_cupcake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="three cupcake"
+            android:onClick="@{()->menu.amountCupcakes(3)}"/>
+
+
+    </LinearLayout>
+</ScrollView>
+
+</layout>

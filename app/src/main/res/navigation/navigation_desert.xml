@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_desert"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.desertorder.MenuFragment"
+        android:label="Menu">
+        <action
+            android:id="@+id/action_menuFragment_to_typesDeseetFragment2"
+            app:destination="@id/typesDeseetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDates"
+        android:name="com.example.desertorder.FragmentDates"
+        android:label="Order Date">
+        <action
+            android:id="@+id/action_fragmentDates_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_fragmentDates_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/typesDeseetFragment"
+        android:name="com.example.desertorder.TypesDeseetFragment"
+        android:label="Type Desert">
+        <action
+            android:id="@+id/action_typesDeseetFragment_to_fragmentDates"
+            app:destination="@id/fragmentDates" />
+        <action
+            android:id="@+id/action_typesDeseetFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.desertorder.SummaryFragment"
+        android:label="Summary"
+        tools:layout="@layout/fragment_summary" >
+        <action
+            android:id="@+id/action_summaryFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
