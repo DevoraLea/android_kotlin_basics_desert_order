@@ -1,11 +1,11 @@
 # android_kotlin_basics_desert_order
 Desert Order app - view model, data binding, navigation
 
-You make an order app click how many cupcakes you want
+Choose how many cupcakes you want
 
 ![1](https://user-images.githubusercontent.com/95829236/156899060-d1e4e69a-6cb0-4dd4-9d46-dc029ac3089e.png)
 
-choose the type of cupcake ou want
+choose the type of cupcake you want
 
 ![2](https://user-images.githubusercontent.com/95829236/156899061-9c45818e-85fb-4fba-a71f-f69babbd937a.png)
 
